@@ -37,17 +37,17 @@ jobs:
 #           -config view.locale=ja_JP
 #           "
           
-#    - name: OpenVAS Scan
-#      run: |
-#       docker run -d -p 1234:443 --name openvas mikesplain/openvas
-#       docker ps
-#       DID=`docker ps -aqf "name=openvas"`
-#       echo $DID
-#       docker exec $DID pwd
-#       docker exec $DID ls -l
-#       #docker exec $DID /openvas-check-setup
-
-    - name: nmap Scan
+    - name: OpenVAS Scan
       run: |
-       sudo apt install nmap -y
-       nmap -A localhost
+       docker run -d -p 1234:443 --name openvas mikesplain/openvas
+       docker ps
+       DID=`docker ps -aqf "name=openvas"`
+       echo $DID
+       docker exec $DID pwd
+       docker exec $DID ls -l
+       #docker exec $DID omp --help
+
+#    - name: nmap Scan
+#      run: |
+#       sudo apt install nmap -y
+#       nmap -A localhost
