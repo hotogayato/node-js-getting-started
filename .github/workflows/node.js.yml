@@ -44,5 +44,10 @@ jobs:
        DID=`docker ps -aqf "name=openvas"`
        echo $DID
        docker exec $DID pwd
-       docker exec $DID ls
+       docker exec $DID ls -l
        #docker exec $DID /openvas-check-setup
+
+    - name: nmap Scan
+      run: |
+       sudo apt install nmap -y
+       nmap localhost
