@@ -15,7 +15,6 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    
     - name: Heroku deploy
     - uses: actions/checkout@v2
     - uses: akhileshns/heroku-deploy@v3.8.8
@@ -23,7 +22,6 @@ jobs:
         heroku_api_key: "51ed0720-fb88-4bdd-a7a5-6e1df5b61884"
         heroku_app_name: "owasp-zap-test-target"
         heroku_email: "tetsuhiko.takahashi.zp@hitachi.com"
-          
     - name: ZAP Scan
       uses: zaproxy/action-full-scan@v0.3.0
       with:
