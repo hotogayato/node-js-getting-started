@@ -41,5 +41,6 @@ jobs:
       run: |
        #docker run -d -p 1234:443 --name openvas mikesplain/openvas
        #docker ps
-       wget -q -O - http://www.atomicorp.com/installers/atomic
-       yum -y install openvas
+       yes | sudo add-apt-repository ppa:mrazavi/openvas
+       sudo apt-get update
+       yes | sudo apt -y install openvas9
