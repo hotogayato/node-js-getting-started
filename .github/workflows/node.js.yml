@@ -19,11 +19,11 @@ jobs:
       uses: zaproxy/action-full-scan@v0.3.0
       with:
         target: 'https://owasp-zap-test-target.herokuapp.com/'
-          cmd_options: >
-            -a
-            -j
-            -z "
-            -config alert.maxInstances=0
-            -config view.locale=ja_JP
-            "
+        cmd_options: >
+           -a
+           -j
+           -z "
+           -config alert.maxInstances=0
+           -config view.locale=ja_JP
+           "
           
