@@ -45,4 +45,4 @@ jobs:
        echo $DID
        docker exec $DID pwd
        docker exec $DID ls
-       docker exec $DID openvas-check-setup
+       docker exec $DID /openvas-check-setup
