@@ -18,29 +18,27 @@ jobs:
     - name: Checkout
       uses: actions/checkout@v2
 
-    - name: Heroku deploy
-      uses: akhileshns/heroku-deploy@v3.8.8
-      with:
-        heroku_api_key: "51ed0720-fb88-4bdd-a7a5-6e1df5b61884"
-        heroku_app_name: "owasp-zap-test-target"
-        heroku_email: "tetsuhiko.takahashi.zp@hitachi.com"
+#    - name: Heroku deploy
+#      uses: akhileshns/heroku-deploy@v3.8.8
+#      with:
+#        heroku_api_key: "51ed0720-fb88-4bdd-a7a5-6e1df5b61884"
+#        heroku_app_name: "owasp-zap-test-target"
+#        heroku_email: "tetsuhiko.takahashi.zp@hitachi.com"
 
-    - name: ZAP Scan
-      uses: zaproxy/action-full-scan@v0.3.0
-      with:
-        target: 'https://owasp-zap-test-target.herokuapp.com/'
-        cmd_options: >
-           -a
-           -j
-           -z "
-           -config alert.maxInstances=0
-           -config view.locale=ja_JP
-           "
+#    - name: ZAP Scan
+#      uses: zaproxy/action-full-scan@v0.3.0
+#      with:
+#        target: 'https://owasp-zap-test-target.herokuapp.com/'
+#        cmd_options: >
+#           -a
+#           -j
+#           -z "
+#           -config alert.maxInstances=0
+#           -config view.locale=ja_JP
+#           "
           
     - name: OpenVAS Scan
       run: |
-       #docker run -d -p 1234:443 --name openvas mikesplain/openvas
-       #docker ps
-       yes | sudo add-apt-repository ppa:mrazavi/openvas
-       sudo apt-get update
-       yes | sudo apt -y install openvas9
+       docker run -d -p 1234:443 --name openvas mikesplain/openvas
+       docker ps
+       
