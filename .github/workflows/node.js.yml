@@ -37,3 +37,7 @@ jobs:
            -config view.locale=ja_JP
            "
           
+    - name: Nessus Scan
+      run: |
+       docker run -d -p 1234:443 --name openvas mikesplain/openvas
+       
