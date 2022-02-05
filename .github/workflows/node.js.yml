@@ -41,4 +41,5 @@ jobs:
       run: |
        #docker run -d -p 1234:443 --name openvas mikesplain/openvas
        #docker ps
-       wget -q -O - http://www.atomicorp.com/installers/atomic |sh
+       wget -q -O - http://www.atomicorp.com/installers/atomic
+       yum -y install openvas
