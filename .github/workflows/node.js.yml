@@ -45,7 +45,7 @@ jobs:
        echo $DID
        docker exec $DID pwd
        docker exec $DID ls -l
-       docker exec $DID omp --help
+       docker exec $DID omp -O
 
 #    - name: nmap Scan
 #      run: |
