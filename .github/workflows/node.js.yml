@@ -41,5 +41,5 @@ jobs:
       run: |
        docker run -d -p 1234:443 --name openvas mikesplain/openvas
        docker ps
-       docker ps -aqf "name=openvas"
-     
+       DID='docker ps -aqf "name=openvas"'
+       echo $DID
