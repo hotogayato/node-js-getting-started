@@ -37,7 +37,9 @@ jobs:
            -config view.locale=ja_JP
            "
           
-    - name: Nessus Scan
+    - name: OpenVAS Scan
       run: |
-       docker run -d -p 1234:443 --name openvas mikesplain/openvas
-       
+       #docker run -d -p 1234:443 --name openvas mikesplain/openvas
+       #docker ps
+       rpm -ivh http://www6.atomicorp.com/channels/atomic/centos/6/x86_64/RPMS/atomic-release-1.0-14.el6.art.noarch.rpm
+       yum install openvas
