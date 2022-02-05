@@ -44,4 +44,5 @@ jobs:
        DID=`docker ps -aqf "name=openvas"`
        echo $DID
        docker exec $DID pwd
+       docker exec $DID openvas-setup
        
