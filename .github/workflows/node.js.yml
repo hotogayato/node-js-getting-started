@@ -18,4 +18,12 @@ jobs:
     - name: ZAP Scan
       uses: zaproxy/action-full-scan@v0.3.0
       with:
-        target: 'https://www.zaproxy.org/'
+        target: 'https://owasp-zap-test-target.herokuapp.com/'
+          cmd_options: >
+            -a
+            -j
+            -z "
+            -config alert.maxInstances=0
+            -config view.locale=ja_JP
+            "
+          
