@@ -55,6 +55,6 @@ jobs:
       run: |
        hub issue -h
        #hub issue create -l bot -m 'test issue created!' -F ./result.txt
-       hub issue create -l bot -m '${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}/actions/runs/${GITHUB_RUN_ID}' -F ./result.txt
+       hub issue create -l bot -m ${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}/actions/runs/${GITHUB_RUN_ID}
       env:
         GITHUB_TOKEN: ${{ secrets.MY_TOKEN }}
