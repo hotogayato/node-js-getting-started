@@ -40,6 +40,7 @@ jobs:
     - name: OpenVAS Scan
       run: |
        docker run -d -p 443:443 --name openvas mikesplain/openvas
+       docker top openvas
  
 #    - name: nmap Scan
 #      run: |
