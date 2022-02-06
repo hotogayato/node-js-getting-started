@@ -46,4 +46,6 @@ jobs:
       run: |
        sudo apt install nmap -y
        nmap -A localhost
-       uses: JasonEtco/create-an-issue@5d9504915f79f9cc6d791934b8ef34f2353dd74d
+       
+    - name: Create Issue
+      uses: JasonEtco/create-an-issue@5d9504915f79f9cc6d791934b8ef34f2353dd74d
