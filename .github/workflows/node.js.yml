@@ -45,6 +45,7 @@ jobs:
        echo $DID
        docker exec $DID pwd
        docker exec $DID ls -l
+       docker exec $DID systemctl start openvas-manager
        docker exec $DID omp -O
 
 #    - name: nmap Scan
