@@ -38,16 +38,10 @@ jobs:
 #           "
           
     - name: OpenVAS Scan
+      uses: mikesplain/openvas
       run: |
-       docker run -d -p 1234:443 --name openvas mikesplain/openvas
-       docker ps
-       DID=`docker ps -aqf "name=openvas"`
-       echo $DID
-       docker exec $DID pwd
-       docker exec $DID ls -l
-       docker exec $DID systemctl start openvas-manager
-       docker exec $DID omp -O
-
+       docker run -d -p 443:443 --name openvas mikesplain/openvas
+ 
 #    - name: nmap Scan
 #      run: |
 #       sudo apt install nmap -y
