@@ -37,12 +37,13 @@ jobs:
 #           -config view.locale=ja_JP
 #           "
           
-    - name: OpenVAS Scan
-      run: |
-       docker run -d -p 443:443 --name openvas mikesplain/openvas
-       docker top openvas
- 
-#    - name: nmap Scan
+#    - name: OpenVAS Scan
 #      run: |
-#       sudo apt install nmap -y
-#       nmap -A localhost
+#       docker run -d -p 443:443 --name openvas mikesplain/openvas
+#       docker top openvas
+ 
+    - name: nmap Scan
+      run: |
+       sudo apt install nmap -y
+       nmap -A localhost
+       uses: JasonEtco/create-an-issue@5d9504915f79f9cc6d791934b8ef34f2353dd74d
