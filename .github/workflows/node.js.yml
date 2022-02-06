@@ -50,4 +50,8 @@ jobs:
     - name: Create Issue
       uses: JasonEtco/create-an-issue@5d9504915f79f9cc6d791934b8ef34f2353dd74d
       with:
-        filename: .github/fuga-template.md
+       env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+       filename: .github/fuga-template.md
+
+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
