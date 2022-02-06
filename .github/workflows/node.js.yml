@@ -18,6 +18,7 @@ jobs:
     - name: Checkout
       uses: actions/checkout@v2
 
+# 動作ok
 #    - name: Heroku deploy
 #      uses: akhileshns/heroku-deploy@v3.8.8
 #      with:
@@ -25,6 +26,7 @@ jobs:
 #        heroku_app_name: "owasp-zap-test-target"
 #        heroku_email: "tetsuhiko.takahashi.zp@hitachi.com"
 
+# 動作ok
 #    - name: ZAP Scan
 #      uses: zaproxy/action-full-scan@v0.3.0
 #      with:
@@ -36,20 +38,23 @@ jobs:
 #           -config alert.maxInstances=0
 #           -config view.locale=ja_JP
 #           "
-          
+
+# 動作確認途中
 #    - name: OpenVAS Scan
 #      run: |
 #       docker run -d -p 443:443 --name openvas mikesplain/openvas
 #       docker top openvas
- 
+
+# 動作ok
     - name: nmap Scan
       run: |
        sudo apt install nmap -y
        nmap -A localhost
        
     - name: Create Issue
-      uses: JasonEtco/create-an-issue@v2
+      run: hub issue create \
+          -l bot \                             # ラベル
+          -m '[BOT] test issue created!'       # タイトル
       env:
-       GITHUB_TOKEN: "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"
-      with:
-       filename: .github/fuga-template.md
+#        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        GITHUB_TOKEN: "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"
