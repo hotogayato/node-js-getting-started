@@ -51,7 +51,5 @@ jobs:
       uses: JasonEtco/create-an-issue@5d9504915f79f9cc6d791934b8ef34f2353dd74d
       with:
        env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        GITHUB_TOKEN: "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"
        filename: .github/fuga-template.md
-
-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
