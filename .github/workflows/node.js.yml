@@ -53,7 +53,6 @@ jobs:
        
     - name: Create Issue
       run: |
-       hub -m
        hub issue create -l bot -m 'test issue created!'
       env:
         GITHUB_TOKEN: ${{ secrets.MY_TOKEN }}
