@@ -53,8 +53,8 @@ jobs:
        
     - name: Create Issue
       run: hub issue create \
-          -l bot \                             # ラベル
-          -m '[BOT] test issue created!'       # タイトル
+          -l bot \
+          -m '[BOT] test issue created!'
       env:
 #        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         GITHUB_TOKEN: "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"
