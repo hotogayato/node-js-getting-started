@@ -54,7 +54,7 @@ jobs:
     - name: Create Issue
       run: |
        hub issue -h
-       echo "aaa" > /result.txt
-       hub issue create -l bot -m 'test issue created!' -F /result.txt
+       echo "aaa" > /.github/result.txt
+       hub issue create -l bot -m 'test issue created!' -F /.github/result.txt
       env:
         GITHUB_TOKEN: ${{ secrets.MY_TOKEN }}
