@@ -48,7 +48,7 @@ jobs:
        nmap -A localhost
        
     - name: Create Issue
-      uses: JasonEtco/create-an-issue@5d9504915f79f9cc6d791934b8ef34f2353dd74d
+      uses: JasonEtco/create-an-issue
       env:
        GITHUB_TOKEN: "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"
       with:
