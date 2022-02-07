@@ -46,15 +46,20 @@ jobs:
 #       docker top openvas
 
 # 動作ok
-    - name: nmap Scan
-      run: |
-       sudo apt install nmap -y
-       nmap -A localhost
+#    - name: nmap Scan
+#      run: |
+#       sudo apt install nmap -y
+#       nmap -A localhost
 
 # 動作ok
-    - name: Create Issue
+#    - name: Create Issue
+#      run: |
+#       hub issue -h
+#       hub issue create -l DAST -m "The result is "${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}/actions/runs/${GITHUB_RUN_ID}
+#      env:
+#        GITHUB_TOKEN: ${{ secrets.MY_TOKEN }}
+
+# 検証中
+    - name: OpenVAS
       run: |
-       hub issue -h
-       hub issue create -l DAST -m "The result is "${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}/actions/runs/${GITHUB_RUN_ID}
-      env:
-        GITHUB_TOKEN: ${{ secrets.MY_TOKEN }}
+       pip install --user gvm-tools
