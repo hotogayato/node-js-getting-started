@@ -73,5 +73,5 @@ jobs:
     - name: Upload
       uses: actions/upload-artifact@v2
       with: 
-      name: javascript.zip
-      path: /home/runner/work/_temp/codeql_databases/
+       name: CodeQL results
+       path: /home/runner/work/_temp/codeql_databases/javascript.zip
