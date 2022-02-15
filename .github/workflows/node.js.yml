@@ -81,5 +81,4 @@ jobs:
        systemctl status gvmd
        systemctl status openvas-scanner
        systemctl status gsad
-       openvasmd --create-user=takahashi --role=Admin
-       openvasmd --user=takahashi --new-password=taka1234
+       omp -h -u -w -g
