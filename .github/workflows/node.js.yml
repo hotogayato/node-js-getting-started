@@ -19,12 +19,12 @@ jobs:
       uses: actions/checkout@v2
 
 # 動作ok
-    - name: Heroku deploy
-      uses: akhileshns/heroku-deploy@v3.8.8
-      with:
-        heroku_api_key: "51ed0720-fb88-4bdd-a7a5-6e1df5b61884"
-        heroku_app_name: "owasp-zap-test-target"
-        heroku_email: "tetsuhiko.takahashi.zp@hitachi.com"
+#    - name: Heroku deploy
+#      uses: akhileshns/heroku-deploy@v3.8.8
+#      with:
+#        heroku_api_key: "51ed0720-fb88-4bdd-a7a5-6e1df5b61884"
+#        heroku_app_name: "owasp-zap-test-target"
+#        heroku_email: "tetsuhiko.takahashi.zp@hitachi.com"
 
 # 動作ok
 #    - name: ZAP Scan
@@ -40,15 +40,15 @@ jobs:
 #           "
 
 # ZAP AppScan demosite
-    - name: ZAP Scan
-      uses: zaproxy/action-full-scan@v0.3.0
-      with:
-        target: 'https://demo.testfire.net?mode=demo'
-        cmd_options: >
-           -z "
-           -config alert.maxInstances=0
-           -config view.locale=ja_JP
-           "
+#    - name: ZAP Scan
+#      uses: zaproxy/action-full-scan@v0.3.0
+#      with:
+#        target: 'https://demo.testfire.net?mode=demo'
+#        cmd_options: >
+#           -z "
+#           -config alert.maxInstances=0
+#           -config view.locale=ja_JP
+#           "
 
 # 動作確認途中
 #    - name: OpenVAS Scan
