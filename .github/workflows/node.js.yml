@@ -27,14 +27,24 @@ jobs:
         heroku_email: "tetsuhiko.takahashi.zp@hitachi.com"
 
 # 動作ok
+#    - name: ZAP Scan
+#      uses: zaproxy/action-full-scan@v0.3.0
+#      with:
+#        target: 'https://owasp-zap-test-target.herokuapp.com/'
+#        cmd_options: >
+#           -a
+#           -j
+#           -z "
+#           -config alert.maxInstances=0
+#           -config view.locale=ja_JP
+#           "
+
+# ZAP AppScan demosite
     - name: ZAP Scan
       uses: zaproxy/action-full-scan@v0.3.0
       with:
-        #target: 'https://owasp-zap-test-target.herokuapp.com/'
         target: 'https://demo.testfire.net?mode=demo'
         cmd_options: >
-        #   -a
-        #   -j
            -z "
            -config alert.maxInstances=0
            -config view.locale=ja_JP
