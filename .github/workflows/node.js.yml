@@ -81,4 +81,5 @@ jobs:
        systemctl status gvmd
        systemctl status openvas-scanner
        systemctl status gsad
-       omp -h -u -w -g
+       #omp -h -u -w -g
+       omp-u admin -w admin -iX "<CREATE_CREDENTIAL> kali loginroottoor </ CREATE_CREDENTIAL>"
