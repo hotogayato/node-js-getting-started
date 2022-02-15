@@ -74,3 +74,11 @@ jobs:
     - name: OpenVAS
       run: |
        sudo add-apt-repository ppa:mrazavi/gvm
+       sudo apt install gvm
+       sudo greenbone-nvt-sync
+       sudo greenbone-scapdata-sync
+       sudo greenbone-certdata-sync
+       systemctl status gvmd
+       systemctl status openvas-scanner
+       systemctl status gsad
+       
