@@ -52,7 +52,7 @@ jobs:
 
 # ZAP AppScan demosite
     - name: ZAP Scan
-      uses: zaproxy/action-api-scan@v0.1.0
+      uses: zaproxy/action-baseline@v0.6.0
       with:
         target: 'https://demo.testfire.net?mode=demo'
         cmd_options: >
