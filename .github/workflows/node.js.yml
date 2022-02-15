@@ -50,6 +50,17 @@ jobs:
 #           -config view.locale=ja_JP
 #           "
 
+# ZAP AppScan demosite
+    - name: ZAP Scan
+      uses: zaproxy/action-api-scan@v0.1.0
+      with:
+        target: 'https://demo.testfire.net?mode=demo'
+        cmd_options: >
+           -z "
+           -config alert.maxInstances=0
+           -config view.locale=ja_JP
+           "
+
 # 動作確認途中
 #    - name: OpenVAS Scan
 #      run: |
@@ -71,13 +82,13 @@ jobs:
 #        GITHUB_TOKEN: ${{ secrets.MY_TOKEN }}
 
 # 検証中
-    - name: OpenVAS
-      run: |
-       sudo add-apt-repository ppa:mrazavi/gvm
-       sudo apt install gvm
-       sudo greenbone-nvt-sync
-       sudo greenbone-scapdata-sync
-       sudo greenbone-certdata-sync
-       systemctl status gvmd
-       systemctl status openvas-scanner
-       systemctl status gsad
+#    - name: OpenVAS
+#      run: |
+#       sudo add-apt-repository ppa:mrazavi/gvm
+#       sudo apt install gvm
+#       sudo greenbone-nvt-sync
+#       sudo greenbone-scapdata-sync
+#       sudo greenbone-certdata-sync
+#       systemctl status gvmd
+#       systemctl status openvas-scanner
+#       systemctl status gsad
