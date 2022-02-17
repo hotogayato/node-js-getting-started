@@ -27,17 +27,17 @@ jobs:
 #        heroku_email: "tetsuhiko.takahashi.zp@hitachi.com"
 
 # 動作ok
-#    - name: ZAP Scan
-#      uses: zaproxy/action-full-scan@v0.3.0
-#      with:
-#        target: 'https://owasp-zap-test-target.herokuapp.com/'
-#        cmd_options: >
-#           -a
-#           -j
-#           -z "
-#           -config alert.maxInstances=0
-#           -config view.locale=ja_JP
-#           "
+    - name: ZAP Scan
+      uses: zaproxy/action-full-scan@v0.3.0
+      with:
+        target: 'https://owasp-zap-test-target.herokuapp.com/'
+        cmd_options: >
+           -a
+           -j
+           -z "
+           -config alert.maxInstances=0
+           -config view.locale=ja_JP
+           "
 
 # ZAP AppScan demosite
 #    - name: ZAP Scan
@@ -51,15 +51,15 @@ jobs:
 #           "
 
 # ZAP AppScan demosite
-    - name: ZAP Scan
-      uses: zaproxy/action-baseline@v0.6.0
-      with:
-        target: 'https://demo.testfire.net?mode=demo'
-        cmd_options: >
-           -z "
-           -config alert.maxInstances=0
-           -config view.locale=ja_JP
-           "
+#    - name: ZAP Scan
+#      uses: zaproxy/action-baseline@v0.6.0
+#      with:
+#        target: 'https://demo.testfire.net?mode=demo'
+#        cmd_options: >
+#           -z "
+#           -config alert.maxInstances=0
+#           -config view.locale=ja_JP
+#           "
 
 # 動作確認途中
 #    - name: OpenVAS Scan
